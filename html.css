@@ -1,0 +1,15 @@
+#h1{
+    color: red;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+#div{
+    background-color: green;
+}
+#output{
+    color: white;
+}
+button{
+    color:black;
+    margin-left: 30%;
+}

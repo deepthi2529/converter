@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" type="text/css" href="html.css">
+<body>
+    <h1 id="h1">CONVERTER</h1>
+    <div id="div">
+        <select name="category" id="s1">
+            <option value="length">length</option>
+            <option value="temperature">temperature</option>
+        </select>
+        <input id="ip1" type="number" placeholder="num">
+
+        <select name="fromUnit" id="f1">
+            <option value="meter">meter</option>
+            <option value="kilometer">kilometer</option>
+            <option value="centimeter">centimeter</option>
+            <option value="millimeter">millimeter</option>
+            <option value="celsius">celsius</option>
+            <option value="kelvin">kelvin</option>
+            <option value="fahrenheit">fahrenheit</option>
+        </select>
+        <select name="toUnit" id="f2">
+            <option value="meter">meter</option>
+            <option value="kilometer">kilometer</option>
+            <option value="centimeter">centimeter</option>
+            <option value="millimeter">millimeter</option>
+            <option value="celsius">celsius</option>
+            <option value="kelvin">kelvin</option>
+            <option value="fahrenheit">fahrenheit</option>
+        </select>
+        <br>
+        <br>
+        <h2 id="output"></h2>
+        <button type="button" onclick="conversion()">Convert</button>
+    </div>
+
+    <script>
+        function conversion(){
+            let inputValue = parseFloat(document.getElementById("ip1").value);
+            let category = document.getElementById("s1").value;
+            let fromUnit = document.getElementById("f1").value;
+            let toUnit = document.getElementById("f2").value;
+            let result;
+
+            // Perform the conversion based on selected units and category
+            if (category === "length") {
+                result = performLengthConversion(inputValue, fromUnit, toUnit);
+            } else if (category === "temperature") {
+                result = performTemperatureConversion(inputValue, fromUnit, toUnit);
+            }
+
+            // Display the result
+            document.getElementById("output").textContent = result;
+        }
+
+        function performLengthConversion(value, fromUnit, toUnit) {
+            // Add your length conversion logic here
+            // Example: converting from meters to kilometers
+            if (fromUnit === "meter" && toUnit === "kilometer") {
+                return value / 1000;
+            }
+            // Add more conversion cases as needed
+        }
+
+        function performTemperatureConversion(value, fromUnit, toUnit) {
+            // Add your temperature conversion logic here
+            // Example: converting from Celsius to Fahrenheit
+            if (fromUnit === "celsius" && toUnit === "fahrenheit") {
+                return (value * 9/5) + 32;
+            }
+            // Add more conversion cases as needed
+        }
+    </script>
+</body>
+</html
